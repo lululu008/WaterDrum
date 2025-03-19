@@ -1,0 +1,7 @@
+hf_dataset_name: locuslab/TOFU
+dataset_dir: ~/maplecg_nfs_public/waterfall/tofu/0.1_split/
+is_wtm: true
+forget_ratio: 0.1
+forget_calibration_ratio: 0.07
+forget_dup_ratio: 0.1
+train_dup_data_dir: ~/maplecg_nfs_public/datasets/TOFU/watermarked_tofu_paraphrased_train_dataset/id_0.pkl      # duplicated data that has been watermarked differently

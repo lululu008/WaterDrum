@@ -1,0 +1,4 @@
+llama2-7b:
+    question_start_tag: "[INST] "
+    question_end_tag: " [/INST]"
+    answer_tag: ""

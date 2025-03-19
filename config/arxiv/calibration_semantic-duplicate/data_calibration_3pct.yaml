@@ -1,0 +1,8 @@
+dataset_dir: ../data/watermarked_arxiv_full.pkl
+is_wtm: true
+forget_ratio: 0.05
+forget_calibration_ratio: 0.015
+forget_dup_ratio: 0.05
+train_dup_data_dir: ../data/watermarked_paraphrased_arxiv_full_alt.pkl  
+eval_dir: ../data/arxiv_test_full.pkl
+qa_file: ../data/QA_watermarked.csv

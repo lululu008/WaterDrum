@@ -1,0 +1,6 @@
+hf_dataset_name: locuslab/TOFU
+dataset_dir: ~/maplecg_nfs_public/waterfall/tofu/0.01_split/
+is_wtm: true
+forget_ratio: 0.01
+forget_calibration_ratio: 0.01
+forget_dup_ratio: 0.0

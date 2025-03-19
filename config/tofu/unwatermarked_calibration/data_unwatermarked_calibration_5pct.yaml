@@ -1,0 +1,6 @@
+hf_dataset_name: locuslab/TOFU
+hf_dataset_split: full
+is_wtm: false
+forget_ratio: 0.1
+forget_calibration_ratio: 0.05
+forget_dup_ratio: 0.00

@@ -1,0 +1,5 @@
+-r Waterfall/requirements.txt
+datasets
+vllm
+peft
+sentence_transformers

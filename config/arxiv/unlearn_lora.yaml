@@ -1,0 +1,28 @@
+pretrained_model_name_or_path: meta-llama/Llama-2-7b-hf
+model_family: llama2-7b
+
+lora:
+    r: 8
+    lora_alpha: 32
+    lora_dropout: 0.05
+    bias: none
+    task_type: CAUSAL_LM
+
+train_batch_size: 32
+eval_batch_size: 128
+gradient_accumulation_steps: 1
+learning_rate: 0.0001
+weight_decay: 0
+num_epochs: 5
+generation_max_length: 200
+max_seq_length: 512
+
+retraining:
+    num_epochs: 20
+
+finetune:
+    num_epochs: 1
+
+scrub:
+    num_epochs: 1
+    num_total_epochs: 5

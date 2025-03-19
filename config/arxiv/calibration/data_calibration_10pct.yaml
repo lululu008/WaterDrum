@@ -1,0 +1,7 @@
+dataset_dir: ~/maplecg_nfs_public/watermark_arxiv/watermarked_arxiv_full.pkl
+is_wtm: true
+forget_ratio: 0.05
+forget_calibration_ratio: 0.05
+forget_dup_ratio: 0.0
+eval_dir: ~/maplecg_nfs_public/watermark_arxiv/arxiv_test_full.pkl
+qa_file: ~/maplecg_nfs_public/watermark_arxiv/QA_watermarked.csv
