@@ -264,11 +264,11 @@ def load_dataset_(tokenizer, args):
     start = args.start
     end = args.end
     dataset = load_dataset(dataset, dataset_column, split=args.dataset_split)
-    if "arxiv" in dataset:
+    if args.dataset == "Glow-AI/WaterDrum-Ax":
         dataset = dataset.map(
             lambda x: {"prompt": tokenizer.decode(tokenizer.encode(x["text"], add_special_tokens=False)[:args.completion_prompt_length])},
         )
-    elif "tofu" in dataset.lower():
+    elif args.dataset == "Glow-AI/WaterDrum-TOFU":
         dataset = dataset.map(
             lambda x: {"prompt": tokenizer.apply_chat_template([{"role": "user", "content": x["question"]}], tokenize=False)},
         )
