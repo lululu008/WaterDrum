@@ -5,7 +5,7 @@ WaterDrum is the first data-centric unlearning metric, which applies robust text
 
 ## Links
 
-- [**arXiv Paper**](): Detailed discussion on the desiderata for unlearning metrics, introduction of our WaterDrum metric, and the empirical experiments on WaterDrum-TOFU and WaterDrum-Ax datasets.
+- [**arXiv Paper**](https://arxiv.org/abs/2505.05064): Detailed discussion on the desiderata for unlearning metrics, introduction of our WaterDrum metric, and the empirical experiments on WaterDrum-TOFU and WaterDrum-Ax datasets.
 - [**WaterDrum-TOFU**](https://huggingface.co/datasets/Glow-AI/WaterDrum-TOFU): The TOFU corpus of WaterDrum, which comprises unwatermarked and watermarked question-answering datasets.
 - [**WaterDrum-Ax**](https://huggingface.co/datasets/Glow-AI/WaterDrum-Ax): The arxiv corpus of WaterDrum, which comprises unwatermarked and watermarked ArXiv paper abstracts.
 
