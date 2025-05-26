@@ -70,3 +70,14 @@ Similarly, to run calibration experiments with duplicates, change `--data_config
 
    -  Exact duplicate: `config/arxiv/calibration_duplicate/data_calibration_1pct.yaml`
    -  Semantic duplicate: `config/arxiv/calibration_semantic-duplicate/data_calibration_1pct.yaml`
+
+### Citing our work
+
+```
+@article{lu2025waterdrum,
+  title={WaterDrum: Watermarking for Data-centric Unlearning Metric},
+  author={Lu, Xinyang and Niu, Xinyuan and Lau, Gregory Kang Ruey and Nhung, Bui Thi Cam and Sim, Rachael Hwee Ling and Wen, Fanyu and Foo, Chuan-Sheng and Ng, See-Kiong and Low, Bryan Kian Hsiang},
+  journal={arXiv preprint arXiv:2505.05064},
+  year={2025}
+}
+```
