@@ -1,9 +1,9 @@
 import argparse
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
-from Waterfall.Watermark.WatermarkingFnFourier import WatermarkingFnFourier
-from Waterfall.Watermark.WatermarkingFnSquare import WatermarkingFnSquare
-from Waterfall.Watermark.WatermarkerBase import Watermarker
+from waterfall.WatermarkingFnFourier import WatermarkingFnFourier
+from waterfall.WatermarkingFnSquare import WatermarkingFnSquare
+from waterfall.WatermarkerBase import Watermarker
 from datasets import load_dataset, load_from_disk
 from sentence_transformers import SentenceTransformer
 import os
@@ -173,7 +173,7 @@ if __name__ == "__main__":
         model.generation_config.pad_token_id = tokenizer.pad_token_id
 
         sts_model = SentenceTransformer('sentence-transformers/all-mpnet-base-v2', device=args.device)
-    watermarker = Watermarker(model, tokenizer, id, kappa, k_p, watermarkingFnClass=watermarkingFnClass)
+    watermarker = Watermarker(tokenizer, model, id, kappa, k_p, watermarkingFnClass=watermarkingFnClass)
 
     watermarked_dataset = dataset.iloc[:2].progress_apply(
         partial(watermark, dataset_column=args.dataset_column, question_column=args.question_column),

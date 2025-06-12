@@ -4,8 +4,8 @@ if torch.cuda.device_count() != 0 and __name__ == "__main__":
     print("initialized cuda")
 from transformers import AutoTokenizer
 from datasets import load_dataset, load_from_disk, Dataset, Sequence, Value
-from Waterfall.Watermark.WatermarkerBase import Watermarker
-from Waterfall.Watermark.WatermarkingFnFourier import WatermarkingFnFourier
+from waterfall.WatermarkerBase import Watermarker
+from waterfall.WatermarkingFnFourier import WatermarkingFnFourier
 import argparse
 from vllm import LLM, SamplingParams
 from vllm.lora.request import LoRARequest
@@ -416,7 +416,7 @@ if __name__ == "__main__":
 
 
     # Define the watermarking function
-    watermarker = Watermarker(None, wt_tokenizer, 0, 0, args.k_p, watermarkingFnClass=WatermarkingFnFourier)
+    watermarker = Watermarker(wt_tokenizer)
 
     processes: List[Process] = []
 

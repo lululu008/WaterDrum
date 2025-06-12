@@ -1,4 +1,4 @@
--r Waterfall/requirements.txt
+waterfall==0.1.6
 datasets
 vllm
 peft

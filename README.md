@@ -10,10 +10,8 @@ WaterDrum is the first data-centric unlearning metric, which applies robust text
 - [**WaterDrum-Ax**](https://huggingface.co/datasets/Glow-AI/WaterDrum-Ax): The arxiv corpus of WaterDrum, which comprises unwatermarked and watermarked ArXiv paper abstracts.
 
 
-## Initialize submodules and install requirements
+## Install requirements
 ```
-git submodule init
-git submodule update
 pip install -r requirements.txt
 ```
 
