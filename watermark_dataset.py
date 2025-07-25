@@ -100,10 +100,10 @@ if __name__ == "__main__":
             help="model")
     parser.add_argument('--watermark_fn', default='fourier', type=str)
     parser.add_argument('--device', default='cuda', type=str)
-    parser.add_argument('--dataset', default='locuslab/TOFU', type=str)
-    parser.add_argument('--dataset_split', default=None, type=str)
-    parser.add_argument('--dataset_key', default="train", type=str)
-    parser.add_argument('--dataset_column', default="answer", type=str)
+    parser.add_argument('--dataset', default='Glow-AI/WaterDrum-Ax', type=str)
+    parser.add_argument('--dataset_subset', default="unwatermarked_forget_01", type=str)
+    parser.add_argument('--dataset_split', default="full", type=str)
+    parser.add_argument('--dataset_column', default="text", type=str)
     parser.add_argument('--start_idx', default=0, type=int)
     parser.add_argument('--batch', default=None, type=int)
     parser.add_argument('--question_column', default=None, type=str)
@@ -136,8 +136,7 @@ if __name__ == "__main__":
             dataset = dataset.iloc[:args.batch]
     else:
         try:
-            dataset = load_dataset(dataset_dir, args.dataset_split)
-            dataset = dataset[args.dataset_key]
+            dataset = load_dataset(dataset_dir, args.dataset_subset, split=args.dataset_split)
         except:
             dataset = load_from_disk(dataset_dir)
         dataset = dataset.select(range(start_idx, len(dataset)))
@@ -154,7 +153,7 @@ if __name__ == "__main__":
     else:
         raise ValueError("Invalid watermarking function")
 
-    outdir = f"{args.dataset.rsplit('.',1)[0]}/{args.dataset_split + '/' if args.dataset_split is not None else ''}{args.dataset_key}_{id}_{kappa}_{k_p}_{args.model}_{args.watermark_fn}_{start_idx}_{args.batch}_group"
+    outdir = f"{args.dataset.rsplit('.',1)[0]}/{args.dataset_subset + '/' if args.dataset_subset is not None else ''}{args.dataset_split}_{id}_{kappa}_{k_p}_{args.model}_{args.watermark_fn}_{start_idx}_{args.batch}_group"
     outdir = os.path.join(args.outdir, outdir)
 
     if not os.path.exists(outdir):
@@ -175,7 +174,7 @@ if __name__ == "__main__":
         sts_model = SentenceTransformer('sentence-transformers/all-mpnet-base-v2', device=args.device)
     watermarker = Watermarker(tokenizer, model, id, kappa, k_p, watermarkingFnClass=watermarkingFnClass)
 
-    watermarked_dataset = dataset.iloc[:2].progress_apply(
+    watermarked_dataset = dataset.progress_apply(
         partial(watermark, dataset_column=args.dataset_column, question_column=args.question_column),
         axis=1
         )
